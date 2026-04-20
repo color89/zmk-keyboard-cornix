@@ -17,7 +17,7 @@ include:
   #  shield: cornix_dongle_adapter cornix_dongle_eyelash dongle_display
   #  snippet: studio-rpc-usb-uart nrf52840-nosd
   #  artifact-name: cornix_dongle_nosd
-  - board: mdbt50q_rx
+  - board: raytac_mdbt50q_rx
     shield: cornix_dongle_adapter
     snippet: studio-rpc-usb-uart nrf52840-nosd
     artifact-name: cornix_dongle
@@ -47,7 +47,7 @@ include:
     snippet: studio-rpc-usb-uart nrf52840-nosd
     artifact-name: cornix_reset
 
-  - board: mdbt50q_rx
+  - board: raytac_mdbt50q_rx
     shield: settings_reset
     snippet: studio-rpc-usb-uart nrf52840-nosd
     artifact-name: reset_nicenano_nosd

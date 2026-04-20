@@ -35,6 +35,6 @@ manifest:
     #  clone-depth: 1
     - name: zmk-component-raytac-dongle
       remote: rschenk
-      revision: v0.4 # <-- This module pinned to the same version as ZMK
+      revision: main # <-- This module pinned to the same version as ZMK
   self:
     path: config
