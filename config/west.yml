@@ -8,28 +8,33 @@ manifest:
       url-base: https://github.com/urob
     - name: janpfischer
       url-base: https://github.com/janpfischer
+    - name: rschenk
+      url-base: https://github.com/rschenk
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3
       clone-depth: 1
       import:
         file: app/west.yml
     - name: zmk-helpers
       remote: urob
-      revision: main
+      revision: v0.3
       clone-depth: 1
     #- name: zmk-rgbled-widget
     #  remote: hitsmaxft
     #  revision: main
     #  clone-depth: 1
-    - name: zmk-dongle-display
-      remote: hitsmaxft
-      revision: zephyr4
-      clone-depth: 1
+    #- name: zmk-dongle-display
+    #  remote: hitsmaxft
+    #  revision: zephyr4
+    #  clone-depth: 1
     #- name: zmk-dongle-screen
     #  remote: janpfischer
     #  revision: main
     #  clone-depth: 1
+    - name: zmk-component-raytac-dongle
+      remote: rschenk
+      revision: v0.3 # <-- This module pinned to the same version as ZMK
   self:
     path: config
