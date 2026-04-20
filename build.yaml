@@ -19,7 +19,7 @@ include:
   #  artifact-name: cornix_dongle_nosd
   - board: raytac_mdbt50q_rx
     shield: cornix_dongle_adapter
-    snippet: studio-rpc-usb-uart nrf52840-nosd
+    snippet: studio-rpc-usb-uart
     artifact-name: cornix_dongle
   # dongle screen not yet supports zephyr4
   # - board: seeeduino_xiao_ble
