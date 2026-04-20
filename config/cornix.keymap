@@ -211,7 +211,7 @@
             bindings = <
 &td0       &kp Q     &kp I     &kp E     &kp U  &kp COMMA                      &kp B      &kp D  &kp K  &kp N     &kp J     &kp BSPC
 &kp TAB    &kp A     &kp L     &kp FSLH  &kp O  &kp DOT                        &kp H      &kp T  &kp G  &kp M     &kp S     &kp RET
-&kp LSHFT  &kp Z     &kp X     &kp C     &kp V  &kp MINUS  &kp C_MUTE  &tog 4  &kp P      &kp R  &kp Y  &kp W     &kp F     &kp UP
+&kp LSHFT  &kp Z     &kp X     &kp C     &kp V  &kp MINUS  &kp C_MUTE  &tog 6  &kp P      &kp R  &kp Y  &kp W     &kp F     &kp UP
 &kp LCTRL  &kp LGUI  &kp LALT  &mo 5     &mo 2  &kp SPACE                      &kp SPACE  &mo 1  &mo 3  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
