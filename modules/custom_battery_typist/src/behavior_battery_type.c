@@ -280,8 +280,13 @@ static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
 
     /* Show active BT profile number */
     int active = zmk_ble_active_profile_index();
-    char bt_str[] = { ' ', 'B', 'T', '0' + active, '\0' };
-    send_string(bt_str);
+
+    if (active >= 0) {
+        char bt_str[] = { ' ', 'B', 'T', '0' + active, '\0' };
+        send_string(bt_str);
+    } else {
+        send_string(FORMAT_NO_DATA);
+    }
 
     return ZMK_BEHAVIOR_OPAQUE;
 }
