@@ -3,7 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: hitsmaxft
-      url-base: https://github.com/caksoylar/zmk-rgbled-widget
+      url-base: https://github.com/hitsmaxft
     - name: urob
       url-base: https://github.com/urob
     - name: janpfischer
@@ -21,10 +21,10 @@ manifest:
       remote: urob
       revision: main
       clone-depth: 1
-    - name: zmk-rgbled-widget
-      remote: hitsmaxft
-      revision: main
-      clone-depth: 1
+    #- name: zmk-rgbled-widget
+    #  remote: hitsmaxft
+    #  revision: main
+    #  clone-depth: 1
     #- name: zmk-dongle-display
     #  remote: hitsmaxft
     #  revision: zephyr4
