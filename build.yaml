@@ -20,6 +20,7 @@ include:
   - board: mdbt50q_rx
     shield: cornix_dongle_adapter
     snippet: studio-rpc-usb-uart
+    cmake-args: -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE};${GITHUB_WORKSPACE}/modules/custom_battery_typist"
     artifact-name: cornix_dongle
   # dongle screen not yet supports zephyr4
   # - board: seeeduino_xiao_ble
@@ -32,14 +33,17 @@ include:
   #   artifact-name: cornix_dongle_zds_nano
   - board: cornix_left
     # shield: cornix_indicator
+    cmake-args: -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE};${GITHUB_WORKSPACE}/modules/custom_battery_typist"
     artifact-name: cornix_left_default_nosd
 
   - board: cornix_ph_left
     # shield: cornix_indicator
+    cmake-args: -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE};${GITHUB_WORKSPACE}/modules/custom_battery_typist"
     artifact-name: cornix_left_for_dongle_nosd
 
   - board: cornix_right
     # shield: cornix_indicator
+    cmake-args: -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE};${GITHUB_WORKSPACE}/modules/custom_battery_typist"
     artifact-name: cornix_right_nosd
 
   - board: cornix_right
