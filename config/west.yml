@@ -3,7 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: hitsmaxft
-      url-base: https://github.com/hitsmaxft
+      url-base: https://github.com/caksoylar/zmk-rgbled-widget
     - name: urob
       url-base: https://github.com/urob
     - name: janpfischer
