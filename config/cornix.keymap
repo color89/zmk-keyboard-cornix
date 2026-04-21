@@ -161,11 +161,6 @@
 
             tap-ms = <20>;
         };
-        
-        battery_type: battery_type {
-            compatible = "zmk,behavior-battery-type";
-            #binding-cells = <0>;
-        };
     };
 
     conditional_layers {
@@ -256,7 +251,7 @@
 &none         &none  &none  &none  &none  &out OUT_TOG                  &none  &none     &kp UP    &none      &none  &none
 &bt BT_SEL 0  &none  &none  &none  &none  &bt BT_CLR                    &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none  &none
 &bt BT_SEL 1  &none  &none  &none  &none  &none         &trans  &trans  &none  &none     &none     &none      &none  &none
-&bt BT_SEL 2  &none  &none  &none  &none  &battery_type                 &none  &none     &none     &none      &none  &none
+&bt BT_SEL 2  &none  &none  &none  &none  &none                         &none  &none     &none     &none      &none  &none
             >;
 
             sensor-bindings =
