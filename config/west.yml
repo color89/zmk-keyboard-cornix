@@ -10,8 +10,6 @@ manifest:
       url-base: https://github.com/janpfischer
     - name: rschenk
       url-base: https://github.com/rschenk
-    - name: gohanda11
-      url-base: https://github.com/gohanda11
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -25,10 +23,6 @@ manifest:
       clone-depth: 1
     - name: zmk-rgbled-widget
       remote: hitsmaxft
-      revision: main
-      clone-depth: 1
-    - name: zmk-ws2812-driver
-      remote: gohanda11
       revision: main
       clone-depth: 1
     #- name: zmk-dongle-display
