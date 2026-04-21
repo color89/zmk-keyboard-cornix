@@ -15,9 +15,8 @@
 #include <zmk/behavior.h>
 #include <zmk/battery.h>
 #include <zmk/ble.h>
-#include <zmk/endpoints.h>
-#include <zmk/hid.h>
 #include <zmk/keymap.h>
+#include <zmk/events/keycode_state_changed.h>
 
 #if IS_ENABLED(CONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING)
 #include <zmk/split/central.h>
@@ -180,29 +179,32 @@ static const struct char_keycode CHAR_MAP[] = {
 
 static const uint32_t HID_LSHIFT = HID_KEY_LSHIFT;
 
+/* 1文字をキーストロークとして送信する */
 static int send_char(char c) {
     if ((uint8_t)c >= CHAR_MAP_SIZE || CHAR_MAP[(uint8_t)c].keycode == 0) {
         LOG_WRN("No keycode mapping for char: 0x%02x", c);
         return -EINVAL;
     }
-
     const struct char_keycode *mapping = &CHAR_MAP[(uint8_t)c];
 
+    /* Shiftが必要な文字はShiftを先に押す (true = pressed) */
     if (mapping->shift) {
-        zmk_hid_keyboard_press(HID_LSHIFT);
-        zmk_endpoints_send_report(HID_USAGE_KEY);
+        raise_zmk_keycode_state_changed_from_encoded(HID_LSHIFT, true, k_uptime_get());
         k_msleep(KEYSTROKE_DELAY_MS);
     }
 
-    zmk_hid_keyboard_press(mapping->keycode);
-    zmk_endpoints_send_report(HID_USAGE_KEY);
+    /* 文字キーを押す */
+    raise_zmk_keycode_state_changed_from_encoded(mapping->keycode, true, k_uptime_get());
     k_msleep(KEYSTROKE_DELAY_MS);
 
-    zmk_hid_keyboard_release(mapping->keycode);
+    /* 文字キーを離す (false = released) */
+    raise_zmk_keycode_state_changed_from_encoded(mapping->keycode, false, k_uptime_get());
+
+    /* Shiftが必要だった場合はShiftも離す */
     if (mapping->shift) {
-        zmk_hid_keyboard_release(HID_LSHIFT);
+        k_msleep(KEYSTROKE_DELAY_MS);
+        raise_zmk_keycode_state_changed_from_encoded(HID_LSHIFT, false, k_uptime_get());
     }
-    zmk_endpoints_send_report(HID_USAGE_KEY);
     k_msleep(KEYSTROKE_DELAY_MS);
 
     return 0;

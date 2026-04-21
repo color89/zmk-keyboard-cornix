@@ -49,6 +49,7 @@ include:
   - board: cornix_right
     shield: settings_reset
     snippet: studio-rpc-usb-uart nrf52840-nosd
+    cmake-args: -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE};${GITHUB_WORKSPACE}/modules/custom_battery_typist"
     artifact-name: cornix_reset
 
   - board: mdbt50q_rx
